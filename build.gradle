@@ -4,7 +4,7 @@ plugins {
     id "io.freefair.lombok" version "6.6.3"
 }
 
-group 'dev.greycrane'
+group 'dev.dev.greycrane'
 version '1.0'
 
 repositories {
