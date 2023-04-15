@@ -11,7 +11,7 @@ public class TestBase {
     @BeforeAll
     public void configureTests() {
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
-        Configuration.baseUrl = "https://wikipedia.org";
+        Configuration.baseUrl = "https://en.wikipedia.org";
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100.0");
         Configuration.remote = System.getProperty("selenoid", "https://user1:1234@selenoid.autotests.cloud/wd/hub");

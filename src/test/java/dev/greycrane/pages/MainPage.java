@@ -7,8 +7,14 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
     public MainPage openPage() {
-        open("/");
-        $(byText("Рекомендуемые продукты")).shouldBe(visible);
+        open("/wiki/Main_Page");
+        $(byText("From today's featured article")).shouldBe(visible);
+        return this;
+    }
+
+    public MainPage openSearchField() {
+        $("#p-search").click();
+        $(".cdx-search-input__input-wrapper").shouldBe(visible);
         return this;
     }
 }

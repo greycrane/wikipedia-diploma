@@ -31,20 +31,26 @@ public class SearchTests {
     @Test
     @Owner("szhuravlev")
     @Severity(BLOCKER)
-    @DisplayName("Проверка возможности начать оформление дебетовой карты")
-    @Story("Проверка возможности начать оформление дебетовой карты")
-    void checkGetDebitCardButton() {
-        step("Открыть главную страницу tinkoff.ru", () -> {
-                    open("/");
+    @DisplayName("Проверка наличия разделов на главной странице")
+    @Story("Проверка наличия разделов на главной странице")
+    void checkTopicsOnMainPage() {
+        step("Открыть главную страницу Wikipedia", () -> {
+                    open("/wiki/Main_Page");
                 });
-        step("Нажать на кнопку \"Оформить карту\"", () -> {
-            $(byText("Оформить карту")).click();
+        step("Проверить наличие раздела \"From today's featured article\"", () -> {
+            $(byText("From today's featured article")).shouldBe(visible);
         });
-        step("Проверить, что можно выбрать дизайн карты", () -> {
-            $(byText("Выберите дизайн карты")).shouldBe(visible);
+        step("Проверить наличие раздела \"In the news\"", () -> {
+            $(byText("In the news")).shouldBe(visible);
         });
-        step("Открыть главную страницу tinkoff.ru", () -> {
-
+        step("Проверить наличие раздела \"Did you know ...\"", () -> {
+            $(byText("Did you know ...")).shouldBe(visible);
+        });
+        step("Проверить наличие раздела \"On this day\"", () -> {
+            $(byText("On this day")).shouldBe(visible);
+        });
+        step("Проверить наличие раздела \"Today's featured picture\"", () -> {
+            $(byText("Today's featured picture")).shouldBe(visible);
         });
     }
 
